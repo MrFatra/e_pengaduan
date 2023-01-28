@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
+import '../auth/login.auth.dart';
 import '../widgets/myform.widget.dart';
 
 class LoginPage extends StatelessWidget {
@@ -7,6 +9,10 @@ class LoginPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    LoginAuth loginAuth = Get.put(LoginAuth());
+
+    TextEditingController username = TextEditingController();
+    TextEditingController password = TextEditingController();
     return Scaffold(
       body: ListView(
         children: [
@@ -16,17 +22,27 @@ class LoginPage extends StatelessWidget {
             child: Column(
               children: [
                 Text('Masuk'),
-                MyForm(prefixIcon: Icon(Icons.email), label: 'Masukkan email'),
                 MyForm(
-                    prefixIcon: Icon(Icons.lock_outline_rounded),
-                    label: 'Masukkan password'),
-                Text('Minimal 8 karakter & berisi alfanumerik.'),
+                  controller: username,
+                  prefixIcon: Icon(Icons.email),
+                  label: 'Masukkan username',
+                ),
+                MyForm(
+                  controller: password,
+                  prefixIcon: Icon(Icons.lock_outline_rounded),
+                  label: 'Masukkan password',
+                ),
                 ElevatedButton(onPressed: () {}, child: Text('Masuk')),
                 Row(children: [
-                  Text('belum punya akun? '),
+                  Text('Belum punya akun?'),
                   TextButton(
-                    onPressed: () {},
-                    child: Text('buat akun'),
+                    onPressed: () {
+                      loginAuth
+                          .login(
+                              username: username.text, password: password.text)
+                          .then((value) => debugPrint(value));
+                    },
+                    child: Text('Buat akun'),
                   ),
                 ])
               ],

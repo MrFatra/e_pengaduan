@@ -6,6 +6,10 @@ class PengaduanPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    TextEditingController report = TextEditingController();
+    TextEditingController reportTitle = TextEditingController();
+    TextEditingController reportDate = TextEditingController();
+    TextEditingController reportLocation = TextEditingController();
     return Scaffold(
       body: ListView(
         children: [
@@ -15,13 +19,24 @@ class PengaduanPage extends StatelessWidget {
                 color: Colors.amber, borderRadius: BorderRadius.circular(10)),
             child: Text('Sampaikan Laporan Anda'),
           ),
-          MyForm(label: 'Ketik judul laporan anda'),
-          MyForm(label: 'Ketik isi laporan anda', height: 500),
           MyForm(
+            controller: reportTitle,
+            label: 'Ketik judul laporan anda',
+          ),
+          MyForm(
+            controller: report,
+            label: 'Ketik isi laporan anda',
+            height: 500,
+          ),
+          MyForm(
+            controller: reportDate,
             label: 'Pilih tanggal kejadian',
             suffixIcon: Icon(Icons.calendar_today_outlined),
           ),
-          MyForm(label: 'Ketik lokasi kejadian'),
+          MyForm(
+            controller: reportLocation,
+            label: 'Ketik lokasi kejadian',
+          ),
           DropdownButton(
             items: [
               DropdownMenuItem(child: Text('Pilih instansi tujuan')),

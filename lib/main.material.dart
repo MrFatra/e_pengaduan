@@ -1,13 +1,14 @@
 import 'package:e_pengaduan/constant.dart';
 import 'package:e_pengaduan/pages/welcome.page.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class MainMaterial extends StatelessWidget {
   const MainMaterial({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         outlinedButtonTheme: OutlinedButtonThemeData(
@@ -29,7 +30,7 @@ class MainMaterial extends StatelessWidget {
           ),
         ),
       ),
-      home: WelcomeScreen(),
+      home: const WelcomeScreen(),
     );
   }
 }
