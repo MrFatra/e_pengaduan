@@ -6,6 +6,7 @@ import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
 
 import 'dashboard_petugas.page.dart';
+import 'register_masyarakat.page.dart';
 
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({super.key});
@@ -62,20 +63,51 @@ class WelcomeScreen extends StatelessWidget {
                           Get.to(() => const LoginPage());
                         },
                         child: Text('Masuk')),
-                    ElevatedButton(
-                        onPressed: () {
-                          registerAuth
-                              .register(
-                                officerName: 'Ramadhan Fatra',
-                                username: 'aku',
-                                password: 'ramadhan',
-                                passwordConfirmation: 'ramadhan',
-                                level: 'admin',
-                                phoneNumber: '08822123231',
-                              )
-                              .then((value) => debugPrint(value));
-                        },
-                        child: Text('Daftar')),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 10.0),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.min,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Container(
+                            color: Color(0x50000000),
+                            height: 2,
+                            width: MediaQuery.of(context).size.width / 4,
+                          ),
+                          Text(
+                            'atau',
+                            style:
+                                Theme.of(context).textTheme.bodySmall!.copyWith(
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                          ),
+                          Container(
+                            color: Color(0x50000000),
+                            height: 2,
+                            width: MediaQuery.of(context).size.width / 4,
+                          ),
+                        ],
+                      ),
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        ElevatedButton(
+                            onPressed: () {
+                              Get.to(() => const RegisterMasyarakatPage());
+                            },
+                            child: Text(
+                              'Daftar as Masyarakat',
+                              style: TextStyle(fontSize: 12),
+                            )),
+                        ElevatedButton(
+                            onPressed: () {},
+                            child: Text(
+                              'Daftar as Petugas',
+                              style: TextStyle(fontSize: 12),
+                            )),
+                      ],
+                    ),
                   ],
                 ),
               ],

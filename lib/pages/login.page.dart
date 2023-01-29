@@ -36,12 +36,7 @@ class LoginPage extends StatelessWidget {
                 Row(children: [
                   Text('Belum punya akun?'),
                   TextButton(
-                    onPressed: () {
-                      loginAuth
-                          .login(
-                              username: username.text, password: password.text)
-                          .then((value) => debugPrint(value));
-                    },
+                    onPressed: () {},
                     child: Text('Buat akun'),
                   ),
                 ])
