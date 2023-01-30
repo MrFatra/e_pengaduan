@@ -1,5 +1,9 @@
 import 'package:e_pengaduan/constant.dart';
+import 'package:e_pengaduan/pages/login.page.dart';
+import 'package:e_pengaduan/pages/register_civilian.page.dart';
+import 'package:e_pengaduan/pages/register_petugas.page.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
 
 class WelcomeScreen extends StatelessWidget {
@@ -42,17 +46,28 @@ class WelcomeScreen extends StatelessWidget {
                       ),
                     ],
                   ),
-                  // Bullet Indicator
-                  Container(
-                    width: 10,
-                    height: 10,
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      color: Colors.greenAccent,
-                    ),
+                  const SizedBox(height: 20),
+                  OutlinedButton(
+                      onPressed: () {
+                        Get.to(() => const LoginPage());
+                      },
+                      child: Text('Masuk')),
+                  const SizedBox(height: 10),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      ElevatedButton(
+                          onPressed: () {
+                            Get.to(() => const RegisterPageCivilian());
+                          },
+                          child: Text('Daftar as Masyarakat')),
+                      ElevatedButton(
+                          onPressed: () {
+                            Get.to(() => const RegisterPagePetugas());
+                          },
+                          child: Text('Daftar as Petugas')),
+                    ],
                   ),
-                  OutlinedButton(onPressed: () {}, child: Text('Masuk')),
-                  ElevatedButton(onPressed: () {}, child: Text('Daftar')),
                 ],
               ),
             ],

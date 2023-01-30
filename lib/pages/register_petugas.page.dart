@@ -1,12 +1,11 @@
-import 'package:e_pengaduan/constant.dart';
-import 'package:e_pengaduan/pages/dashboard.page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../constant.dart';
 import '../widgets/myform.widget.dart';
 
-class LoginPage extends StatelessWidget {
-  const LoginPage({super.key});
+class RegisterPagePetugas extends StatelessWidget {
+  const RegisterPagePetugas({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -47,7 +46,7 @@ class LoginPage extends StatelessWidget {
                       ),
                       child: Center(
                           child: Text(
-                        'Silahkan Login',
+                        'Register Petugas',
                         style: TextStyle(
                           fontSize: 20,
                           fontWeight: FontWeight.w600,
@@ -63,6 +62,10 @@ class LoginPage extends StatelessWidget {
                       children: [
                         MyForm(
                             prefixIcon: Icon(Icons.person),
+                            label: 'Masukkan nama'),
+                        SizedBox(height: 20),
+                        MyForm(
+                            prefixIcon: Icon(Icons.person),
                             label: 'Masukkan username'),
                         SizedBox(height: 20),
                         MyForm(
@@ -70,9 +73,7 @@ class LoginPage extends StatelessWidget {
                             label: 'Masukkan password'),
                         SizedBox(height: 25),
                         ElevatedButton(
-                            onPressed: () {
-                              Get.to(() => const DashboardPage());
-                            },
+                            onPressed: () {},
                             child: Text('Masuk'),
                             style: ElevatedButton.styleFrom(
                               minimumSize: Size(
@@ -81,28 +82,6 @@ class LoginPage extends StatelessWidget {
                               ),
                             )),
                         SizedBox(height: 20),
-                        Row(
-                          children: [
-                            Text(
-                              'Belum punya akun? ',
-                              // ignore: deprecated_member_use
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .headline6!
-                                  .copyWith(fontWeight: FontWeight.bold),
-                              // style: TextStyle(
-                              //   fontWeight: FontWeight.bold,
-                              // ),
-                            ),
-                            TextButton(
-                              onPressed: () {},
-                              child: Text(
-                                'buat akun',
-                                // style: TextStyle(fontWeight: FontWeight.bold),
-                              ),
-                            ),
-                          ],
-                        ),
                       ],
                     ),
                   ),
