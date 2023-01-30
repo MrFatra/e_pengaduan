@@ -4,8 +4,8 @@ import 'package:get/get.dart';
 import '../constant.dart';
 import '../widgets/myform.widget.dart';
 
-class RegisterPageCivilian extends StatelessWidget {
-  const RegisterPageCivilian({super.key});
+class RegisterPagePeople extends StatelessWidget {
+  const RegisterPagePeople({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -60,21 +60,24 @@ class RegisterPageCivilian extends StatelessWidget {
                       mainAxisSize: MainAxisSize.max,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        MyForm(
-                            prefixIcon: Icon(Icons.person),
-                            label: 'Masukkan nama'),
+                        MyForm(prefixIcon: Icon(Icons.key), label: 'NIK'),
+                        SizedBox(height: 20),
+                        MyForm(prefixIcon: Icon(Icons.person), label: 'Nama'),
                         SizedBox(height: 20),
                         MyForm(
-                            prefixIcon: Icon(Icons.person),
-                            label: 'Masukkan username'),
+                            prefixIcon: Icon(Icons.person), label: 'Username'),
                         SizedBox(height: 20),
                         MyForm(
                             prefixIcon: Icon(Icons.lock_outline_rounded),
-                            label: 'Masukkan password'),
+                            label: 'Password'),
+                        SizedBox(height: 25),
+                        MyForm(
+                            prefixIcon: Icon(Icons.lock_outline_rounded),
+                            label: 'Konfirmasi Password'),
                         SizedBox(height: 25),
                         ElevatedButton(
                           onPressed: () {},
-                          child: Text('Masuk'),
+                          child: Text('Daftar'),
                           style: ElevatedButton.styleFrom(
                             minimumSize: Size(
                               double.infinity,

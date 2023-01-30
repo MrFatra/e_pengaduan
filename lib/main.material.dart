@@ -11,7 +11,13 @@ class MainMaterial extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
+        splashColor: Colors.transparent,
+        highlightColor: Colors.transparent,
         // primarySwatch: Colors.orange,
+        checkboxTheme: CheckboxThemeData(
+          fillColor: MaterialStateProperty.all(kSecondaryColor),
+          overlayColor: MaterialStateProperty.all(Colors.transparent),
+        ),
         textTheme: TextTheme(
           // ignore: deprecated_member_use
           headline6: TextStyle(

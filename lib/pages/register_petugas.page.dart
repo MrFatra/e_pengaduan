@@ -4,8 +4,8 @@ import 'package:get/get.dart';
 import '../constant.dart';
 import '../widgets/myform.widget.dart';
 
-class RegisterPagePetugas extends StatelessWidget {
-  const RegisterPagePetugas({super.key});
+class RegisterPageOfficer extends StatelessWidget {
+  const RegisterPageOfficer({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -60,17 +60,22 @@ class RegisterPagePetugas extends StatelessWidget {
                       mainAxisSize: MainAxisSize.max,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        MyForm(
-                            prefixIcon: Icon(Icons.person),
-                            label: 'Masukkan nama'),
+                        MyForm(prefixIcon: Icon(Icons.person), label: 'Nama'),
                         SizedBox(height: 20),
                         MyForm(
                             prefixIcon: Icon(Icons.person),
-                            label: 'Masukkan username'),
+                            label: 'No. Telepon'),
+                        SizedBox(height: 20),
+                        MyForm(
+                            prefixIcon: Icon(Icons.person), label: 'Username'),
                         SizedBox(height: 20),
                         MyForm(
                             prefixIcon: Icon(Icons.lock_outline_rounded),
-                            label: 'Masukkan password'),
+                            label: 'Password'),
+                        SizedBox(height: 20),
+                        MyForm(
+                            prefixIcon: Icon(Icons.lock_outline_rounded),
+                            label: 'Konfirmasi Password'),
                         SizedBox(height: 25),
                         ElevatedButton(
                             onPressed: () {},

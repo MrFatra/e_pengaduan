@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 class MyForm extends StatelessWidget {
   final String label;
+  final TextEditingController? controller;
   final Icon? prefixIcon;
   final Icon? suffixIcon;
   final double? height;
@@ -9,6 +10,7 @@ class MyForm extends StatelessWidget {
   const MyForm({
     super.key,
     required this.label,
+    this.controller,
     this.prefixIcon,
     this.suffixIcon,
     this.height,
