@@ -54,25 +54,61 @@ class WelcomeScreen extends StatelessWidget {
                       ],
                     ),
                     const SizedBox(height: 20),
-                    OutlinedButton(
+                    ElevatedButton(
                         onPressed: () {
-                          Get.to(() => const LoginPage());
+                          Get.to(() => LoginPage());
                         },
                         child: Text('Masuk')),
-                    const SizedBox(height: 10),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 20),
+                      child: Row(
+                        children: [
+                          Expanded(
+                              child: Divider(
+                            color: Colors.black.withOpacity(.25),
+                            endIndent: 30,
+                            thickness: 3,
+                          )),
+                          Text(
+                            'OR',
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                color: Colors.black.withOpacity(.25)),
+                          ),
+                          Expanded(
+                              child: Divider(
+                            color: Colors.black.withOpacity(.25),
+                            indent: 30,
+                            thickness: 3,
+                          )),
+                        ],
+                      ),
+                    ),
                     Row(
+                      mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        ElevatedButton(
-                            onPressed: () {
-                              Get.to(() => const RegisterPagePeople());
-                            },
-                            child: Text('Daftar as Masyarakat')),
-                        ElevatedButton(
-                            onPressed: () {
-                              Get.to(() => const RegisterPageOfficer());
-                            },
-                            child: Text('Daftar as Petugas')),
+                        Expanded(
+                          child: OutlinedButton(
+                              onPressed: () {
+                                Get.to(() => const RegisterPagePeople());
+                              },
+                              child: Text(
+                                'Daftar as Masyarakat',
+                                textAlign: TextAlign.center,
+                              )),
+                        ),
+                        SizedBox(width: 20),
+                        Expanded(
+                          child: OutlinedButton(
+                              onPressed: () {
+                                Get.to(() => const RegisterPageOfficer());
+                              },
+                              child: Text(
+                                'Daftar as Petugas',
+                                textAlign: TextAlign.center,
+                              )),
+                        ),
                       ],
                     ),
                   ],

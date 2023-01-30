@@ -21,6 +21,9 @@ class MyForm extends StatelessWidget {
       width: double.infinity,
       height: height,
       child: TextFormField(
+        onChanged: (value) {
+          controller != null ? controller!.text = value : null;
+        },
         decoration: InputDecoration(
           suffixIcon: suffixIcon,
           border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),

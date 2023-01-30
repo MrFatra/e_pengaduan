@@ -28,7 +28,7 @@ class MainMaterial extends StatelessWidget {
         outlinedButtonTheme: OutlinedButtonThemeData(
           style: OutlinedButton.styleFrom(
             foregroundColor: kSecondaryColor,
-            padding: const EdgeInsets.all(15),
+            padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 15),
             side: const BorderSide(
               color: kSecondaryColor,
             ),
